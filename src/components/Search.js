@@ -1,10 +1,14 @@
 import React from "react";
 
-function Search() {
+function Search({ onPokeSearch }) {
+  function handleSearchChange(e) {
+    onPokeSearch(e.target.value);
+  }
+
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" />
+        <input className="prompt" onChange={handleSearchChange} />
         <i className="search icon" />
       </div>
     </div>
